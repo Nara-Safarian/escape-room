@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import BookingPage from '../../pages/booking-page/booking-page';
-import { AppRoute } from '../../consts';
+import { AppRoute, AuthorizationStatus } from '../../consts';
 import ContactsPage from '../../pages/contacts-page/contacts-page';
 import LoginPage from '../../pages/login-page/login-page';
 import MainPage from '../../pages/main-page/main-page';
@@ -9,6 +9,7 @@ import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import QuestPage from '../../pages/quest-page/quest-page';
 import HistoryRouter from '../history-route/history-route';
 import browserHistory from '../../browser-history';
+import PrivateRoute from '../private-route/private-route';
 
 function App(): JSX.Element {
   return (
@@ -25,7 +26,13 @@ function App(): JSX.Element {
         </Route>
 
         <Route path={AppRoute.MyQuests}
-          element={<MyQuestsPage />}
+          element={
+            <PrivateRoute
+              authorizationStatus={AuthorizationStatus.NoAuth}
+            >
+              <MyQuestsPage />
+            </PrivateRoute>
+          }
         >
         </Route>
 

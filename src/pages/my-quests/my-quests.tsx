@@ -1,3 +1,5 @@
+import Logo from '../../components/logo/logo';
+
 function MyQuestsPage(): JSX.Element {
   return (
     <>
@@ -126,9 +128,7 @@ function MyQuestsPage(): JSX.Element {
         <header className="header">
           <div className="container container--size-l">
             <a className="logo header__logo" href="index.html" aria-label="Перейти на Главную">
-              <svg width="134" height="52" aria-hidden="true">
-                <use xlinkHref="#logo"></use>
-              </svg>
+              <Logo />
             </a>
             <nav className="main-nav header__main-nav">
               <ul className="main-nav__list">

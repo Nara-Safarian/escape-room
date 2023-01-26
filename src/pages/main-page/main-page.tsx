@@ -1,3 +1,5 @@
+import Logo from '../../components/logo/logo';
+
 function MainPage(): JSX.Element {
   return (
     <>
@@ -126,9 +128,7 @@ function MainPage(): JSX.Element {
         <header className="header">
           <div className="container container--size-l">
             <span className="logo header__logo">
-              <svg width="134" height="52" aria-hidden="true">
-                <use xlinkHref="#logo"></use>
-              </svg>
+              <Logo />
             </span>
             <nav className="main-nav header__main-nav">
               <ul className="main-nav__list">
